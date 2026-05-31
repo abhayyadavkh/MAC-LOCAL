@@ -112,4 +112,5 @@ Thumbs.db
 # Ignore local Maven wrapper binaries if you rely on system Maven 
 .mvn/wrapper/maven-wrapper.jar
 
-hybris4intellij.properties
+hybris4intellij.properties‎
+
