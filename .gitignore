@@ -1,0 +1,114 @@
+
+!custom/
+!config/
+
+custom/**/testclasses/
+custom/**/*testclasses.xml
+custom/**/eclipsebin/
+custom/**/.backups/
+
+config/licence/ 
+config/tomcat/ 
+config/readme.txt 
+#Ignore security certificates or keystores generated locally 
+config/security/ 
+*.jks 
+*.pem
+
+
+# Package & Archive Files
+# ==========================================
+*.jar
+*.war
+*.ear
+*.rar
+*.zip
+*.tar.gz
+
+# ------------------------------------------
+# CRITICAL EXCEPTIONS (Allow these)
+# ------------------------------------------
+# Allow necessary Gradle wrapper binaries if your project uses them
+!gradle-wrapper.jar
+
+# Allow third-party media or driver zips inside your custom media folders
+!custom/**/lib/*.jar
+!custom/**/resources/*.jar   # ==========================================
+# SAP Commerce Cloud (Hybris) Core Rules
+# ==========================================
+**/gensrc/
+**/jalo/
+**/testclasses/
+**/classes/
+**/eclipsebin/ **/.backups/
+
+# Ignore everything in bin EXCEPT your custom extensions
+**/bin/*
+
+
+# Root folders generated at runtime
+**/roles/
+**/log/
+**/temp/
+**/data/
+
+# Specific Hybris Platform Generated Files
+platformhome.properties
+*testclasses.xml
+*-webtestclasses.xml
+*-hmctestclasses.xml
+ 
+
+# Addon specific copy folders
+**/_ui/addons/
+**/views/addons/
+**/tld/addons/
+**/tags/addons/
+**/messages/addons/
+**/web/addonsrc/
+**/_ui-src/addons/
+**/web/addontestsrc/
+**/web/commonwebsrc/*/
+
+# ==========================================
+# IDEs and Build Tools (Java, Maven, Gradle)
+# ==========================================
+.project
+.classpath
+.settings/
+.gradle/
+.idea/
+*.iml
+*.class
+*.log
+target/
+build/
+
+# Avoid ignoring critical Gradle wrapper files if used
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+
+# ==========================================
+# Node / Frontend (Storefronts / Spartacus)
+# ==========================================
+**/node_modules/
+**/.sass-cache/
+.npm/
+.eslintcache
+dist/
+.next/
+out/
+
+# ==========================================
+# Operating System Files
+# ==========================================
+.DS_Store
+._*
+Thumbs.db
+
+# Maven Build & Cache Rules # ========================================== 
+**/target/ 
+.mvn/timing.properties 
+# Ignore local Maven wrapper binaries if you rely on system Maven 
+.mvn/wrapper/maven-wrapper.jar
+
