@@ -26,6 +26,22 @@
             <value code="YELLOW"/>
         </enumtype>
     </enumtypes>
+    <relations>
+        <relation code="UserPurchased2PurchasedProd" localized="false"
+                  generate="true" autocreate="true">
+            <sourceElement type="Customer" qualifier="customer"
+                           cardinality="one">
+                <modifiers read="true" write="true" optional="false"
+                           search="true" unique="true" />
+            </sourceElement>
+            <targetElement type="UserPurchasedProducts" qualifier="userPurchasedProducts"
+                           cardinality="many"  collectiontype="list">
+                <modifiers read="true" write="true" optional="true"
+                           search="true" partof="true" />
+            </targetElement>
+        </relation>
+    </relations>
+
 
     <itemtypes>
 
@@ -102,7 +118,42 @@
                     </attribute>
                 </attributes>
             </itemtype>
+            <itemtype code="UserPurchasedProducts" autocreate="true"
+                      generate="true">
+                <deployment table="UserPurchaseProductsType" typecode="13003" />
+                <attributes>
+                    <attribute qualifier="productID" type="java.lang.String">
+                        <description>Product ID</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="false" unique="true" initial="true" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="orderID" type="java.lang.String">
+                        <description>Order ID</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="false" unique="true" initial="true" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="orderPlacedDate" type="java.util.Date">
+                        <description>Order placed date</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property" />
+                    </attribute>
+                </attributes>
+                <indexes>
+                    <index name="productIDX" unique="false">
+                        <key attribute="productID" />
+                    </index>
+                    <index name="orderIDX" unique="true">
+                        <key attribute="orderID" />
+                        <key attribute="productID" />
+                    </index>
+                </indexes>
+            </itemtype>
         </typegroup>
+
+
 
     </itemtypes>
 </items>
