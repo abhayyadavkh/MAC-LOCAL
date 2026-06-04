@@ -52,7 +52,6 @@ public class HomePageController extends AbstractPageController
 		storeCmsPageInModel(model, contentPage);
 		setUpMetaDataForContentPage(model, contentPage);
 		updatePageTitle(model, contentPage);
-
 		return getViewForPage(model);
 	}
 
