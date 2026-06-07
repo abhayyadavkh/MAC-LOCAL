@@ -304,15 +304,12 @@
     <extension name='xyformsservices' />
     <extension name='xyformsstorefrontcommons' />
     <extension name='xyformsweb' />-->
-	  <extension name='trainingcore' />
+	<extension name='trainingcore' />
     <extension name='trainingbackoffice' />
     <extension name='trainingfacades' />
     <extension name='trainingfulfilmentprocess' />
     <extension name='traininginitialdata' />
     <extension name='trainingtest' />
     <extension name='trainingstorefront' />
-    <extension name="b2bacceleratoraddon" />
-    <extension name="commerceorgaddon" />
-
   </extensions>
 </hybrisconfig>
