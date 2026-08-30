@@ -114,3 +114,19 @@ Thumbs.db
 
 hybris4intellij.properties‎
 
+# Filename patterns to ignore
+*.class
+build.xml
+Generated*.java
+platformhome.properties
+*testclasses.xml
+extensioninfo.xsd
+*hmc.jar
+hmc.xsd
+items.xsd
+beans.xsd
+ruleset.xml
+*.log
+.pmd
+*build.number
+
