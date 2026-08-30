@@ -3,6 +3,7 @@
  */
 package com.hybris.training.storefront.controllers;
 
+import com.hybris.training.core.model.HybrisTubeMembersOnlyPackagesComponentModel;
 import de.hybris.platform.acceleratorcms.model.components.CMSTabParagraphContainerModel;
 import de.hybris.platform.acceleratorcms.model.components.CartSuggestionComponentModel;
 import de.hybris.platform.acceleratorcms.model.components.CategoryFeatureComponentModel;
@@ -54,7 +55,8 @@ public interface ControllerConstants
 			String DynamicBannerComponent = _Prefix + DynamicBannerComponentModel._TYPECODE + _Suffix; 
 			String SubCategoryListComponent = _Prefix + SubCategoryListComponentModel._TYPECODE + _Suffix; 
 			String SimpleResponsiveBannerComponent = _Prefix + SimpleResponsiveBannerComponentModel._TYPECODE + _Suffix; 
-			String CMSTabParagraphContainer = _Prefix + CMSTabParagraphContainerModel._TYPECODE + _Suffix; 
+			String CMSTabParagraphContainer = _Prefix + CMSTabParagraphContainerModel._TYPECODE + _Suffix;
+			String HybrisTubeMembersOnlyPackagesComponent =_Prefix + HybrisTubeMembersOnlyPackagesComponentModel._TYPECODE + _Suffix;
 		}
 	}
 

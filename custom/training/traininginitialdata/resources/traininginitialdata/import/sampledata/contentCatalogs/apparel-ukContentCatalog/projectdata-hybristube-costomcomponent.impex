@@ -1,0 +1,55 @@
+$contentCatalog=apparel-ukContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$productCatalog=apparelProductCatalog
+$productCatalogName=Apparel Product Catalog
+$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$picture=media(code, $contentCV);
+$siteResource=jar:com.hybris.training.initialdata.constants.TrainingInitialDataConstants&/traininginitialdata/import/sampledata/contentCatalogs/$contentCatalog
+$jarResourceCms=jar:de.hybris.platform.apparelstore.constants.ApparelstoreConstants&/apparelstore/import/sampledata/cockpits/cmscockpit
+# Load the storefront context root config param
+$storefrontContextRoot=/trainingstorefront
+$lang=en
+$category=category(code, $productCV)
+
+
+
+# Custom offers components
+INSERT_UPDATE CMSLinkComponent;catalogVersion(CatalogVersion.catalog(Catalog.id[default=apparel-ukContentCatalog]),CatalogVersion.version[default=Staged])[default=apparel-ukContentCatalog:Staged][unique=true];uid[unique=true];name;url;&linkRef;&componentRef;target(code)
+                              ;;HybrisTubeChannelLink;Hybris Tube Channel Link;https://www.youtube.com/channel/UCKlsww8eRLvPIZr6mNlMzGA?sub_confirmation=1;HybrisTubeChannelLink;HybrisTubeChannelLink;newWindow
+
+                              ;;HybrisTubeDiamondPackageLink;Hybris Tube Diamond Package in Different Tab ;https://docs.google.com/document/d/1CsyV-Cf04RMXeh4_KoeJsiX4Pn1R0h9R/view;HybrisTubeDiamondPackageLink;HybrisTubeDiamondPackageLink;newWindow
+
+                              ;;HybrisTubeGoldPackageLink;Hybris Tube Gold Package in Different Tab ;https://docs.google.com/document/d/1MPj1iy5bdnLOSFR6_iazzXqQvOLabiBG/view;HybrisTubeGoldPackageLink;HybrisTubeGoldPackageLink;newWindow
+
+                              ;;GenericProductLink;Generic Product Link in Same Page;$storefrontContextRoot/Categories/Streetwear-women/T-Shirts-women/c/260100;GenericProductLink;GenericProductLink;sameWindow
+
+INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpg'];&imageRef;folder(qualifier)[default='images'];altText
+                   ;;hybrisTubeGeneralMedia;$siteResource/images/banners/hybrisTubeAvailablePackages/GeneralHybrisTubeImage.JPEG;;GeneralHybrisTubeImage.jpeg;;
+
+INSERT_UPDATE HybrisTubeMembersOnlyPackagesComponent;$contentCV[unique=true];uid[unique=true];name;hybrisTubeTitle[lang=$lang];hybrisTubeInfoSummary[lang=$lang];hybrisTubeBannerImage(code, $contentCV);&componentRef;hybrisTubeAvailablePackagesLinks(&linkRef)
+;;hybrisTubeMembersOnlyPackagesCustomComponent;Hybris Tube Packages Custom Component;"Hybris Tube";"You Can Check the Details of Available Packages by Clicking on the Links Above as well";hybrisTubeGeneralMedia;hybrisTubeMembersOnlyPackagesCustomComponent;HybrisTubeChannelLink,HybrisTubeDiamondPackageLink,HybrisTubeGoldPackageLink,GenericProductLink
+
+# Map the Custom Component with the HomePage:
+
+$contentCatalog=apparel-ukContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$productCatalog=apparelProductCatalog
+$productCatalogName=Apparel Product Catalog
+$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$picture=media(code, $contentCV);
+$siteResource=jar:de.hybris.platform.apparelstore.constants.ApparelstoreConstants&/apparelstore/import/sampledata/contentCatalogs/$contentCatalog
+$jarResourceCms=jar:de.hybris.platform.apparelstore.constants.ApparelstoreConstants&/apparelstore/import/sampledata/cockpits/cmscockpit
+# Load the storefront context root config param
+$storefrontContextRoot=/trainingstorefront
+$lang=en
+$category=category(code, $productCV)
+
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
+                         ;;hybrisTubeMembersOnlyPackagesContentSlot;Hybris Tube Available Packages slot;true;hybrisTubeMembersOnlyPackagesCustomComponent
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='LandingPage2Template'];validComponentTypes(code);compTypeGroup(code)
+                             ;HybrisTubeAvailablePackagesHomePageSlotName;;;
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
+                                ;;hybrisTubeMembersOnlyPackagesContentSlotforpage-Homepage;HybrisTubeAvailablePackagesHomePageSlotName;;hybrisTubeMembersOnlyPackagesContentSlot

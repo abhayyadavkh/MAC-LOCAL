@@ -8,6 +8,10 @@
         <collectiontype code="GenderList" elementtype="Gender" autocreate="true" generate="true" type="list"/>
         <collectiontype code="SwatchColorSet" elementtype="SwatchColorEnum" autocreate="true" generate="true"
                         type="set"/>
+        <collectiontype code="CustomOfferLinksList" elementtype="CMSLinkComponent" autocreate="true" generate="true" type="list" />
+
+        <collectiontype code="HybrisTubeCustomInfoLinksList" elementtype="CMSLinkComponent" autocreate="true" generate="true" type="list" />
+        <collectiontype code="HybrisTubeAvailablePackagesLinksList" elementtype="CMSLinkComponent" autocreate="true" generate="true" type="list" />
     </collectiontypes>
 
     <enumtypes>
@@ -28,8 +32,86 @@
     </enumtypes>
 
     <itemtypes>
+        <typegroup name="CustomHybristubeComponentGroup">
 
         <!-- Add your item definitions here -->
+                <itemtype code="HybrisTubeCustomInfoComponent" extends="SimpleCMSComponent" generate="true" autocreate="true" abstract="false"
+                          jaloclass="com.hybris.training.core.jalo.HybrisTubeCustomInfoComponent">
+                    <description>Used to display Custom Information About Hybris Tube Learning</description>
+                    <attributes>
+                        <attribute type="localized:java.lang.String" qualifier="hybrisTubeInfoTitle">
+                            <modifiers read="true" write="true" optional="true" />
+                            <persistence type="property"/>
+                        </attribute>
+                        <attribute type="localized:java.lang.String" qualifier="hybrisTubeInfoSummary">
+                            <modifiers read="true"  write="true" optional="true"/>
+                            <persistence type="property"/>
+                        </attribute>
+                        <attribute type="Media" qualifier="hybrisTubeContentImage">
+                            <modifiers read="true" write="true" optional="true"/>
+                            <persistence type="property"/>
+                        </attribute>
+                        <attribute type="HybrisTubeCustomInfoLinksList" qualifier="hybrisTubeCustomInfoLinks">
+                            <persistence type="property"/>
+                            <description>List of CMS Link Component</description>
+                            <modifiers read="true" write="true"/>
+                        </attribute>
+                    </attributes>
+                </itemtype>
+
+
+                <!-- Add your item definitions here -->
+
+                <itemtype code="HybrisTubeMembersOnlyPackagesComponent" extends="SimpleCMSComponent" generate="true" autocreate="true" abstract="false"
+                          jaloclass="com.hybris.training.core.jalo.HybrisTubeMembersOnlyPackagesComponent">
+                    <description>Used to display Custom Information About Hybris Tube Learning</description>
+                    <attributes>
+                        <attribute type="localized:java.lang.String" qualifier="hybrisTubeTitle">
+                            <modifiers read="true" write="true" optional="true" />
+                            <persistence type="property"/>
+                        </attribute>
+                        <attribute type="localized:java.lang.String" qualifier="hybrisTubeInfoSummary">
+                            <modifiers read="true"  write="true" optional="true"/>
+                            <persistence type="property"/>
+                        </attribute>
+                        <attribute type="Media" qualifier="hybrisTubeBannerImage">
+                            <modifiers read="true" write="true" optional="true"/>
+                            <persistence type="property"/>
+                        </attribute>
+                        <attribute type="HybrisTubeAvailablePackagesLinksList" qualifier="hybrisTubeAvailablePackagesLinks">
+                            <persistence type="property"/>
+                            <description>List of CMS Link Component</description>
+                            <modifiers read="true" write="true"/>
+                        </attribute>
+                    </attributes>
+                </itemtype>
+
+                <itemtype code="CustomOffersComponent" extends="SimpleCMSComponent" generate="true" autocreate="true" abstract="false"
+                          jaloclass="com.hybris.training.core.jalo.CustomOffersComponent">
+                    <description>Used to display offers on homepage</description>
+                    <attributes>
+                        <attribute type="localized:java.lang.String" qualifier="headerText">
+                            <modifiers read="true" write="true" optional="false" />
+                            <defaultvalue>"headerText"</defaultvalue>
+                            <persistence type="property"/>
+                        </attribute>
+                        <attribute type="localized:java.lang.String" qualifier="footerText">
+                            <modifiers read="true" write="true" optional="false"/>
+                            <defaultvalue>"footerText"</defaultvalue>
+                            <persistence type="property"/>
+                        </attribute>
+                        <attribute type="Media" qualifier="offerImage">
+                            <modifiers read="true" write="true" optional="true"/>
+                            <persistence type="property"/>
+                        </attribute>
+                        <attribute type="CustomOfferLinksList" qualifier="offerImageLink">
+                            <persistence type="property"/>
+                            <description>List of CMS Link Component</description>
+                            <modifiers read="true" write="true"/>
+                        </attribute>
+                    </attributes>
+                </itemtype>
+        </typegroup>
 
 
         <!-- TypeGroups are for structure of this file only -->
@@ -103,6 +185,5 @@
                 </attributes>
             </itemtype>
         </typegroup>
-
     </itemtypes>
 </items>
