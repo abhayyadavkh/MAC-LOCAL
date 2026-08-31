@@ -102,6 +102,16 @@
                     </attribute>
                 </attributes>
             </itemtype>
+            <itemtype code="Product"
+                      autocreate="false" generate="false">
+                <attributes>
+                    <attribute qualifier="weight" type="java.lang.String">
+                        <description>weight</description>
+                        <modifiers/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
         </typegroup>
 
     </itemtypes>
