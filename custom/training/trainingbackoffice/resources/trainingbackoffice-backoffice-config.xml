@@ -14,6 +14,20 @@
 		</y:actions>
     </context>
 
+
+
+	<context merge-by="type" parent="GenericItem" type="Product" component="editor-area" module="trainingbackoffice">
+		<editorArea:editorArea xmlns:editorArea="http://www.hybris.com/cockpitng/component/editorArea" name="">
+			<editorArea:tab name="hmc.tab.product.extendedattributes" position="26">
+				<editorArea:section name="hmc.section.product.ids">
+					<!-- Explicitly enforcing a text editor parameter if needed -->
+					<editorArea:attribute qualifier="weight" merge-mode="add" editor="com.hybris.cockpitng.editor.defaulttext"/>
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+
 	<!-- Notification Area-->
 	<context component="notification-area">
 	    <na:notification-area>	        
