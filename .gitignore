@@ -130,3 +130,109 @@ ruleset.xml
 .pmd
 *build.number
 
+
+
+
+# folders/files to always ignore
+.metadata
+**/gensrc
+# Eclipse Core
+.project
+
+# JDT-specific (Eclipse Java Development Tools)
+.classpath
+
+#IDE files
+.gradle
+.idea
+idea-module-files
+*.iml
+com.springsource.sts.config.flow.prefs
+org.sonar.ide.eclipse.core.prefs
+HybrisCodeGeneration.
+.DS_Store
+
+org.springframework.ide.eclipse.beans.core.prefs
+org.springframework.ide.eclipse.core.prefs
+.springBeans
+eclipsebin
+
+# NPM packages
+**/node_modules
+
+# Compiled class file
+*.class
+
+# Test classes
+**/testclasses
+
+# Generated jalo java files
+**/jalo
+
+# allow only custom extensions
+
+!**/custom/
+
+ 
+
+# Filename patterns to ignore
+*.class
+build.xml
+Generated*.java
+platformhome.properties
+*testclasses.xml
+extensioninfo.xsd
+*hmc.jar
+hmc.xsd
+items.xsd
+beans.xsd
+ruleset.xml
+*.log
+.pmd
+*build.number
+hybris/config/local.properties
+
+
+base.properties
+#  Addon specific copy folders
+**/_ui/addons
+**/views/addons
+**/tld/addons
+**/tags/addons
+**/messages/addons
+**/web/addonsrc
+**/_ui-src/addons
+**/web/addontestsrc
+**/web/commonwebsrc/*/
+
+web/webroot/cockpit/css/cockpit.css
+web/webroot/cockpit/css/cockpit_comments.css
+web/webroot/cockpit/css/cockpit_compare.css
+web/webroot/cockpit/css/cockpit_essential.css
+web/webroot/cockpit/css/cockpit_login.css
+trainingb2bstorefront/resources/wro_addons.xml
+
+
+*_bof.jar
+
+# Java generated files #
+*.class
+*.war
+*.ear
+
+# Commerce Ant generated files #
+gensrc/
+build.xml
+extensioninfo.xsd
+hmc.xsd
+platformhome.properties
+*-testclasses.xml
+*-webtestclasses.xml
+*-hmctestclasses.xml
+beans.xsd
+items.xsd
+classes/
+eclipsebin/
+trainingb2bstorefront/resources/wro_addons.xml
+ 
+
