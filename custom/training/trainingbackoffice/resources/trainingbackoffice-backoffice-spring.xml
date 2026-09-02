@@ -11,5 +11,6 @@
   		<property name="location" value="/trainingbackoffice-backoffice-labels/"/>
   		<property name="name" value="labels"/>
   	</bean>
+	<bean id="searchService" class="com.hybris.training.backoffice.service.SearchService"/>
 
 </beans>

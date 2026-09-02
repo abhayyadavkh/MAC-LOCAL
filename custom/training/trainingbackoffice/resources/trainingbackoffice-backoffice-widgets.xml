@@ -5,4 +5,9 @@
 <widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/widgets.xsd">
 
+	<widget-extension widgetId="backofficeMainSlot">
+		<widget id="trainingcustombackofficesomething" widgetDefinitionId="com.hybris.cockpitng.borderlayout" slotId="perspectives" title="custombackofficemysearch" template="false">
+			<widget id="mySearch" widgetDefinitionId="com.hybris.training.backoffice.widgets.mycustomsearch" slotId="leftSlot" />
+		</widget>
+	</widget-extension>
 </widgets>
