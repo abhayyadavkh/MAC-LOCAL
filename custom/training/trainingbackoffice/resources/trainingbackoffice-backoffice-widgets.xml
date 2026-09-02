@@ -10,4 +10,18 @@
 			<widget id="mySearch" widgetDefinitionId="com.hybris.training.backoffice.widgets.mycustomsearch" slotId="leftSlot" />
 		</widget>
 	</widget-extension>
+
+
+	<widget-extension widgetId="backofficeMainSlot">
+		<widget id="myextension" widgetDefinitionId="com.hybris.cockpitng.borderlayout" slotId="perspectives"
+				template="false" title="myextension">
+			<widget id="myChatLeft" widgetDefinitionId="com.hybris.training.backoffice.widgets.mychat" slotId="leftSlot"/>
+			<widget id="myChatRight" widgetDefinitionId="com.hybris.training.backoffice.widgets.mychat" slotId="rightSlot"/>
+		</widget>
+	</widget-extension>
+
+	<widget-connection sourceWidgetId="myChatLeft" outputId="outgoingMsg" targetWidgetId="myChatRight" inputId="incomingMsg"/>
+	<widget-connection sourceWidgetId="myChatRight" outputId="outgoingMsg" targetWidgetId="myChatLeft" inputId="incomingMsg"/>
+
+
 </widgets>

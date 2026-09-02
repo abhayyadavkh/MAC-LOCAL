@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<widget-definition id="com.hybris.training.backoffice.widgets.mychat" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/widget-definition.xsd">
+
+    <name>My Chat</name>
+    <description>y chat widget.</description>
+    <defaultTitle>My Chat</defaultTitle>
+    <author>Abhay</author>
+    <version>0.1</version>
+    <controller class="com.hybris.training.backoffice.widgets.mychat.MyChatController"/>
+
+
+    <keywords>
+    <!-- keyword tag is used to define a category under which the widget is visible, when adding it to your application in application orchestrator  -->
+        <keyword>Chat</keyword>
+    </keywords>
+
+    <sockets>
+        <input type="java.lang.String" id="incomingMsg"/>
+        <output type="java.lang.String" id="outgoingMsg"/>
+    </sockets>
+    <view src="mychat.zul" />
+
+
+
+</widget-definition>
