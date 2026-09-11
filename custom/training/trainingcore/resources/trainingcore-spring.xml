@@ -539,4 +539,5 @@
 		<property name="itemCleanupHooks" ref="csTicketRetentionHooks"/>
 		<property name="ticketBusinessService" ref="ticketBusinessService"/>
 	</bean>
+	<bean id="hybrisTubeEventListener" class="com.hybris.training.core.event.HybrisTubeEventListener" parent="abstractEventListener"/>
 </beans>

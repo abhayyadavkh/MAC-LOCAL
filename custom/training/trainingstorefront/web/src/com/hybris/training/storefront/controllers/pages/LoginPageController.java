@@ -3,11 +3,13 @@
  */
 package com.hybris.training.storefront.controllers.pages;
 
+import com.hybris.training.core.event.HybrisTubeEvent;
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.pages.AbstractLoginPageController;
 import de.hybris.platform.acceleratorstorefrontcommons.forms.RegisterForm;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.cms2.model.pages.AbstractPageModel;
 import de.hybris.platform.cms2.model.pages.ContentPageModel;
+import de.hybris.platform.servicelayer.event.EventService;
 import com.hybris.training.storefront.controllers.ControllerConstants;
 
 import javax.annotation.Resource;
@@ -16,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
 import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -104,4 +107,12 @@ public class LoginPageController extends AbstractLoginPageController
 		setUpMetaDataForContentPage(model, pageForRequest);
 		return ControllerConstants.Views.Fragments.Checkout.TermsAndConditionsPopup;
 	}
+    @Resource
+    private EventService eventService;
+    private static final Logger LOG = Logger.getLogger(LoginPageController.class);
+        LOG.info("Before Publish Event");
+        final HybrisTubeEvent event = new HybrisTubeEvent("Hybris Tube Custome Event");
+        eventService.publishEvent(event);
+
+        LOG.info("After Publish Event");
 }
