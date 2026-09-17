@@ -17,3 +17,10 @@ INSERT_UPDATE Media;mediaFormat(qualifier);;code[unique=true];$media;mime[defaul
 
 # Create Media Containers
 INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$catalogVersion
+
+
+INSERT_UPDATE HelloWorldCronJob;code[unique=true];job(code);sessionLanguage(isocode);
+                               ;myHelloWorldServicelayerCronJob;myJobPerformable;en;
+
+INSERT_UPDATE Trigger; cronjob(code)[unique=true]    ; cronExpression
+                     ; outboundSyncSupervisorCronJob ; 30 2,12,22,32,42,52 * * * ?
