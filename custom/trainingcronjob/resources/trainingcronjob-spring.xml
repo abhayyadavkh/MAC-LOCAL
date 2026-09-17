@@ -82,7 +82,7 @@
         <property name="mediaService" ref="mediaService"/>
         <property name="flexibleSearchService" ref="flexibleSearchService"/>
     </bean>
-    <bean id="MyJobPerformable" class="com.hybris.training.job.MyJobPerformable" parent="abstractJobPerformable">
+    <bean id="myJobPerformable" class="com.hybris.training.job.MyJobPerformable" parent="abstractJobPerformable">
         <property name="l10nService" ref="l10nService"></property>
     </bean>
 			
