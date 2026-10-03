@@ -23,15 +23,7 @@
 		<property name="list" ref="customerConverter"/>
 		<property name="add" ref="occCustomerPopulator"/>
 	</bean>
-	<alias name="defaultOccCustomerReverseConverter" alias="occCustomerReverseConverter"/>
-	<bean id="defaultOccCustomerReverseConverter" class="com.hybris.training.customer.converters.ExtAddressCustomerReverseConverter">
-		<property name="addressReverseConverter" ref="addressReverseConverter"/>
-	</bean>
 
-	<bean parent="modifyPopulatorList">
-		<property name="list" ref="customerReverseConverter"/>
-		<property name="add" ref="occCustomeReversePopulator"/>
-	</bean>
 
 	<bean parent="fieldSetLevelMapping">
 		<property name="dtoClass"
